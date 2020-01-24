@@ -6,7 +6,7 @@
 #### Demo
 https://youtu.be/bq7rSJuaz7U
 
-#### Use case order ticket application that has more than one feature
+#### Use case order ticket application that has multiple feature
 1. Feature order flight
 2. Feature order hotel
 3. Feature order train
