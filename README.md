@@ -1,6 +1,6 @@
 ## Composable module android app project
 
-#### Use case order ticket application that has more than one feature.
+#### Use case order ticket application that has more than one feature
 1. Feature order flight
 2. Feature order hotel
 3. Feature order train
@@ -10,10 +10,9 @@
 #### Implementation step by step
 1. [Implement abstraction between app module and feature module using launcher module.](https://github.com/wisnukurniawan/Composable-Module/commit/3096f22a766e9dde9fef797a62daf04b5ca5ff6f)
 2. [Implement dynamic code loading using code generator x reflection.](https://github.com/wisnukurniawan/Composable-Module/commit/ccd5642ad674ecf8f54d2ad21e9bee75c30cfa5c) This is the main part how to make our module can be composable.
-3. How to integrate new feature. Use case adding order bus feature
-   - [Add order bus feature module](https://github.com/wisnukurniawan/Composable-Module/commit/ea43996b83e1804d88addca5c8c3e3ff103a769c)
-   - [Register order bus module as feature](https://github.com/wisnukurniawan/Composable-Module/commit/82e5631bbf223c298f90565e6d4bac72a2095ce9)
+3. How to integrate new feature. Use case, adding order bus feature.
+   - [Add order bus feature module.](https://github.com/wisnukurniawan/Composable-Module/commit/ea43996b83e1804d88addca5c8c3e3ff103a769c)
+   - [Register order bus module as feature.](https://github.com/wisnukurniawan/Composable-Module/commit/82e5631bbf223c298f90565e6d4bac72a2095ce9)
 
 ### Preview before after adding order bus feature
-<img src="preview/Screenshot_1579834646.png" width="260">
-<img src="preview/Screenshot_1579872361.png" width="260">
+<img src="preview/Screenshot_1579834646.png" width="260">&emsp;<img src="preview/Screenshot_1579872361.png" width="260">
