@@ -3,6 +3,7 @@ apply plugin: 'kotlin'
 dependencies {
     implementation project(':launcher:annotations')
     implementation "com.squareup:javapoet:1.11.1"
+    implementation"org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
 }
 
 sourceCompatibility = JavaVersion.VERSION_1_8

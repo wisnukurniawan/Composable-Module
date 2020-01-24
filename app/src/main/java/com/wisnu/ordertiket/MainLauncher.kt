@@ -1,19 +1,20 @@
 package com.wisnu.ordertiket
 
 import android.app.Application
-import com.wisnu.feature.order.flight.OrderFlightFeatureApplication
-import com.wisnu.feature.order.hotel.OrderHotelFeatureApplication
-import com.wisnu.feature.order.train.OrderTrainFeatureApplication
-import com.wisnu.feature.setting.SettingFeatureApplication
-import com.wisnu.feature.transaction.TransactionFeatureApplication
+import com.wisnu.launcher.annotations.RegisterFeature
 import com.wisnu.launcher.main.BaseLauncher
+import com.wisnu.launcher.main.FeatureApplicationClassName
 
+@RegisterFeature(
+    FeatureApplicationClassName.ORDER_FLIGHT,
+    FeatureApplicationClassName.ORDER_HOTEL,
+    FeatureApplicationClassName.ORDER_TRAIN,
+    FeatureApplicationClassName.TRANSACTION,
+    FeatureApplicationClassName.SETTING
+)
 class MainLauncher(application: Application) : BaseLauncher(application) {
     init {
-        registerFeatureApplication(OrderFlightFeatureApplication())
-        registerFeatureApplication(OrderHotelFeatureApplication())
-        registerFeatureApplication(OrderTrainFeatureApplication())
-        registerFeatureApplication(TransactionFeatureApplication())
-        registerFeatureApplication(SettingFeatureApplication())
+        MainLauncherUtils.buildFeatures()
+            .forEach { registerFeatureApplication(it) }
     }
 }
