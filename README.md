@@ -1,4 +1,4 @@
-## Composable module android app project
+## Composable modular android app project
 
 #### Use case order ticket application that has more than one feature
 1. Feature order flight
