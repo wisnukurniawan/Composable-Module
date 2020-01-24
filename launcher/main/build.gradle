@@ -1,0 +1,6 @@
+apply from: "$rootDir/build-system/dependencies-module.gradle"
+
+dependencies {
+    implementation 'androidx.appcompat:appcompat:1.0.2'
+    implementation 'androidx.core:core-ktx:1.0.2'
+}

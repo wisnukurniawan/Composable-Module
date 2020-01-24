@@ -1,0 +1,31 @@
+def useDevelopConfigVarName = "useDevelopConfig"
+def configDevelopPath = "$rootDir/build-system/dependencies-feature-develop.gradle"
+def configReleasePath = "$rootDir/build-system/dependencies-feature-release.gradle"
+def propertiesPath = "$rootDir/local.properties"
+
+def propertiesFile = file(propertiesPath)
+def configDevelopFile = file(configDevelopPath)
+def properties = new Properties()
+
+if (!propertiesFile.exists()) propertiesFile.createNewFile()
+propertiesFile.withInputStream { properties.load(it) }
+
+if (!configDevelopFile.exists()) {
+    copy {
+        from configReleasePath
+        rename { String filename ->
+            "dependencies-feature-develop.gradle"
+        }
+        into "$rootDir/build-system"
+    }
+}
+
+def useDevelopConfig = (hasProperty(useDevelopConfigVarName)) ? getProperty(useDevelopConfigVarName).toBoolean() : properties.getProperty(useDevelopConfigVarName, "false").toBoolean()
+def configPath
+if (useDevelopConfig) {
+    configPath = configDevelopPath
+} else {
+    configPath = configReleasePath
+}
+
+apply from: configPath

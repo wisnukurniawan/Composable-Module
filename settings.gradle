@@ -1,0 +1,2 @@
+include ':app', ':launcher:main', ':launcher:compiler', ':launcher:annotations', ':feature-setting', ':feature-transaction', ':feature-order-train', ':feature-order-flight', ':feature-order-hotel'
+rootProject.name='Order Tiket'

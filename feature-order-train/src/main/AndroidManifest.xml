@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.wisnu.feature.order.train">
+
+    <application>
+        <activity android:name="com.wisnu.feature.order.train.OrderTrainActivity" />
+    </application>
+
+</manifest>

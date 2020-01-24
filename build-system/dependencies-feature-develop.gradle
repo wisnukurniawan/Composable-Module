@@ -1,0 +1,7 @@
+project.ext.config = [
+        "feature-setting",
+        "feature-transaction",
+        "feature-order-flight",
+        "feature-order-train",
+        "feature-order-hotel"
+]
