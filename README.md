@@ -1,5 +1,8 @@
 ## Composable modular android app project
 
+#### Dependencies diagram
+<img src="preview/Screenshot_1579872360.png">
+
 #### Demo
 https://youtu.be/bq7rSJuaz7U
 
