@@ -14,8 +14,8 @@
    - [Add order bus feature module.](https://github.com/wisnukurniawan/Composable-Module/commit/ea43996b83e1804d88addca5c8c3e3ff103a769c)
    - [Register order bus module as feature.](https://github.com/wisnukurniawan/Composable-Module/commit/82e5631bbf223c298f90565e6d4bac72a2095ce9)
 
-### Preview before after adding order bus feature
+#### Preview before after adding order bus feature
 <img src="preview/Screenshot_1579834646.png" width="260">&emsp;<img src="preview/Screenshot_1579872361.png" width="260">
 
-### Reference
+#### Reference
 Scaling an Android App from 1 to 100 developers with modularization in Airbnb. https://youtube.com/watch?v=jrnhIgFzgns&t=466s
