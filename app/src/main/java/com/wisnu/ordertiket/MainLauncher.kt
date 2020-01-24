@@ -9,6 +9,7 @@ import com.wisnu.launcher.main.FeatureApplicationClassName
     FeatureApplicationClassName.ORDER_FLIGHT,
     FeatureApplicationClassName.ORDER_HOTEL,
     FeatureApplicationClassName.ORDER_TRAIN,
+    FeatureApplicationClassName.ORDER_BUS,
     FeatureApplicationClassName.TRANSACTION,
     FeatureApplicationClassName.SETTING
 )

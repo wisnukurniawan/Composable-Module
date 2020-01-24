@@ -3,5 +3,6 @@ project.ext.config = [
         "feature-transaction",
         "feature-order-flight",
         "feature-order-train",
-        "feature-order-hotel"
+        "feature-order-hotel",
+        "feature-order-bus"
 ]

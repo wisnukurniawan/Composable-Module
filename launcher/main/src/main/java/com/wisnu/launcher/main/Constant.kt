@@ -12,6 +12,7 @@ object FeatureApplicationClassName {
     const val ORDER_FLIGHT = "com.wisnu.feature.order.flight.OrderFlightFeatureApplication"
     const val ORDER_HOTEL = "com.wisnu.feature.order.hotel.OrderHotelFeatureApplication"
     const val ORDER_TRAIN = "com.wisnu.feature.order.train.OrderTrainFeatureApplication"
+    const val ORDER_BUS = "com.wisnu.feature.orderbus.OrderBusFeatureApplication"
     const val TRANSACTION = "com.wisnu.feature.transaction.TransactionFeatureApplication"
     const val SETTING = "com.wisnu.feature.setting.SettingFeatureApplication"
 }
