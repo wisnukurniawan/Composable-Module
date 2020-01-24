@@ -18,4 +18,4 @@
 <img src="preview/Screenshot_1579834646.png" width="260">&emsp;<img src="preview/Screenshot_1579872361.png" width="260">
 
 #### Reference
-Scaling an Android App from 1 to 100 developers with modularization in Airbnb. https://youtube.com/watch?v=jrnhIgFzgns&t=466s
+Scaling an Android App from 1 to 100 developers with modularization at Airbnb. https://youtube.com/watch?v=jrnhIgFzgns&t=466s
