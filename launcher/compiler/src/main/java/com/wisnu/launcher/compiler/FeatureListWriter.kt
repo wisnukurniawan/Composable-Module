@@ -18,7 +18,7 @@ class FeatureListWriter(private val featureAnnotatedClass: FeatureAnnotatedClass
 
     private fun createBuildFeaturesMethod(): MethodSpec {
         val methodName = "buildFeatures"
-        val localVariableName = "Features"
+        val localVariableName = "features"
         val featureType = ClassName.get("com.wisnu.launcher.main", "Application")
         val listType = ClassName.get(List::class.java)
         val arrayListType = ClassName.get(ArrayList::class.java)
