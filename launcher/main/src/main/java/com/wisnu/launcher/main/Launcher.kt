@@ -1,18 +1,18 @@
 package com.wisnu.launcher.main
 
-import android.app.Application
+import android.app.Application as AndroidApplication
 
-interface Launcher : FeatureApplicationRegistry, FeatureRegistry {
-    val application: Application
+interface Launcher : ApplicationRegistry, FeatureRegistry {
+    val application: AndroidApplication
 
     interface Provider {
         val launcher: Launcher
     }
 }
 
-interface FeatureApplicationRegistry {
-    val featureApplications: List<FeatureApplication>
-    fun registerFeatureApplication(featureApplication: FeatureApplication?)
+interface ApplicationRegistry {
+    val applications: List<Application>
+    fun registerApplication(application: Application?)
     fun onCreate()
 }
 

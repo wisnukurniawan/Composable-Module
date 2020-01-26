@@ -1,5 +1,5 @@
 package com.wisnu.launcher.main
 
-interface FeatureApplication {
+interface Application {
     fun onCreate(launcher: Launcher)
 }

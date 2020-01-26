@@ -1,19 +1,19 @@
 package com.wisnu.launcher.main
 
-import android.app.Application
+import android.app.Application as AndroidApplication
 
-abstract class BaseLauncher(final override val application: Application) : Launcher {
-    private val _featureApplications: MutableList<FeatureApplication> = mutableListOf()
+abstract class BaseLauncher(final override val application: AndroidApplication) : Launcher {
+    private val _applications: MutableList<Application> = mutableListOf()
     private val _features: MutableList<FeatureLaunchable> = mutableListOf()
 
-    override val featureApplications: List<FeatureApplication>
-        get() = _featureApplications
+    override val applications: List<Application>
+        get() = _applications
     override val features: List<FeatureLaunchable>
         get() = _features
 
-    override fun registerFeatureApplication(featureApplication: FeatureApplication?) {
-        if (featureApplication != null && isNotAdded(_featureApplications, featureApplication)) {
-            _featureApplications.add(featureApplication)
+    override fun registerApplication(application: Application?) {
+        if (application != null && isNotAdded(_applications, application)) {
+            _applications.add(application)
         }
     }
 
@@ -28,6 +28,6 @@ abstract class BaseLauncher(final override val application: Application) : Launc
     }
 
     override fun onCreate() {
-        featureApplications.forEach { it.onCreate(this) }
+        applications.forEach { it.onCreate(this) }
     }
 }
