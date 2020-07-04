@@ -10,8 +10,10 @@
 /.idea/assetWizardSettings.xml
 .DS_Store
 /build
+/buildSrc/build
 /captures
 .externalNativeBuild
 .cxx
+affected_module_detector_log.txt
 
 build-system/dependencies-feature-develop.gradle
