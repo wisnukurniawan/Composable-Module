@@ -155,6 +155,11 @@ class AffectedModuleDetectorImpl constructor(
     }
 
     override fun shouldInclude(project: Project): Boolean {
+        println("wisnu project ${project}")
+        println("wisnu affected ${dependentProjects}")
+        println("wisnu affected ${changedProjects}")
+        println("wisnu affected ${affectedProjects}")
+        println("wisnu contains ${affectedProjects.contains(project)}")
         return (project.isRoot || affectedProjects.contains(project)).also {
             logger?.info("checking whether I should include ${project.path} and my answer is $it")
         }
