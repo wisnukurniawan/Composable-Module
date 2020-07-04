@@ -44,9 +44,7 @@ internal class DependencyTracker constructor(
             }
         }
         addAllDependents(project)
-        logger?.info("dependents of ${project.path} is ${result.map {
-            it.path
-        }}")
+        logger?.info("dependents of ${project.path} is ${result.map { it.path }}")
         // the project isn't a dependent of itself
         return result.minus(project)
     }

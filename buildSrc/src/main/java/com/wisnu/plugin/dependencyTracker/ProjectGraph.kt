@@ -1,6 +1,5 @@
 package com.wisnu.plugin.dependencyTracker
 
-import com.wisnu.plugin.getSupportRootFolder
 import org.gradle.api.Project
 import java.io.File
 import org.gradle.api.logging.Logger
@@ -15,7 +14,7 @@ class ProjectGraph(project: Project, val logger: Logger? = null) {
         // always use cannonical file: b/112205561
         logger?.info("initializing ProjectGraph")
         rootNode = Node(logger)
-        val rootProjectDir = project.getSupportRootFolder().canonicalFile
+        val rootProjectDir = project.projectDir.canonicalFile
         project.subprojects.forEach {
             logger?.info("creating node for ${it.path}")
             val relativePath = it.projectDir.canonicalFile.toRelativeString(rootProjectDir)
