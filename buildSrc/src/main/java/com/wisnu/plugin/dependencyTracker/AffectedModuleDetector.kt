@@ -159,7 +159,13 @@ class AffectedModuleDetectorImpl constructor(
     }
 
     private fun findAffectedProjects(): Set<Project> {
-        return changedProjects + dependentProjects
+        val affectedProjects = changedProjects + dependentProjects
+        return if (affectedProjects.isEmpty()) {
+            logger?.info("couldn't find containing file for some projects, returning ALL")
+            allProjects
+        } else {
+            affectedProjects
+        }
     }
 
     private fun findDependentProjects(): Set<Project> {
