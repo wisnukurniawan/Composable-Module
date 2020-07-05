@@ -6,11 +6,7 @@ import java.util.concurrent.TimeUnit
 
 interface GitClient {
 
-    fun findChangedFilesSince(
-        sha: String,
-        top: String = "HEAD",
-        includeUncommitted: Boolean = false
-    ): List<String>
+    fun findChangedFilesSince(sha: String): List<String>
 
     fun findPreviousMergeCL(): String?
 
@@ -49,19 +45,8 @@ class GitClientImpl(
     /**
      * Finds changed file paths since the given sha
      */
-    override fun findChangedFilesSince(
-        sha: String,
-        top: String,
-        includeUncommitted: Boolean
-    ): List<String> {
-        // use this if we don't want local changes
-        return commandRunner.executeAndParse(
-            if (includeUncommitted) {
-                "$CHANGED_FILES_CMD_PREFIX HEAD..$sha"
-            } else {
-                "$CHANGED_FILES_CMD_PREFIX $top $sha"
-            }
-        )
+    override fun findChangedFilesSince(sha: String): List<String> {
+        return commandRunner.executeAndParse("$CHANGED_FILES_CMD_PREFIX HEAD..$sha")
     }
 
     /**

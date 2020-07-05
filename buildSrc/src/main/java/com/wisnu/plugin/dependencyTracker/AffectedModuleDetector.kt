@@ -153,11 +153,7 @@ class AffectedModuleDetectorImpl constructor(
     }
 
     override fun shouldInclude(project: Project): Boolean {
-        return (project.isRoot || changedProjects.contains(project)).also {
-            println("[TaskInfo] project $project")
-            println("[TaskInfo] affectedProjects $affectedProjects")
-            println("[TaskInfo] changedProjects $changedProjects")
-            println("[TaskInfo] dependentProjects $dependentProjects")
+        return (project.isRoot || affectedProjects.contains(project)).also {
             logger?.info("checking whether I should include ${project.path} and my answer is $it")
         }
     }
@@ -172,10 +168,7 @@ class AffectedModuleDetectorImpl constructor(
 
     private fun findChangedProjects(): Set<Project> {
         val lastMergeSha = git.findPreviousMergeCL() ?: return allProjects
-        val changedFiles = git.findChangedFilesSince(
-            sha = lastMergeSha,
-            includeUncommitted = true
-        )
+        val changedFiles = git.findChangedFilesSince(lastMergeSha)
         val changedProjects: MutableSet<Project> = mutableSetOf()
         changedFiles.forEach { filePath ->
             val containingProject = findContainingProject(filePath)
