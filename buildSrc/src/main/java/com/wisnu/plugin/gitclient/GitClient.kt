@@ -5,6 +5,7 @@ import java.io.File
 import java.util.concurrent.TimeUnit
 
 interface GitClient {
+
     fun findChangedFilesSince(
         sha: String,
         top: String = "HEAD",
@@ -107,14 +108,14 @@ class GitClientImpl(
         override fun executeAndParse(command: String): List<String> {
             return execute(command)
                 .split(System.lineSeparator())
-                .filterNot {
-                    it.isEmpty()
-                }
+                .filterNot { it.isEmpty() }
         }
+
     }
 
     companion object {
         const val PREV_MERGE_CMD = "git log -1 --merges --oneline"
         const val CHANGED_FILES_CMD_PREFIX = "git diff --name-only"
     }
+
 }

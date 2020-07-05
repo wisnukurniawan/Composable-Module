@@ -23,10 +23,7 @@ internal class DependencyTracker constructor(
                     .dependencies
                     .filterIsInstance(ProjectDependency::class.java)
                     .forEach {
-                        logger?.info(
-                            "there is a dependency from ${project.path} to " +
-                                it.dependencyProject.path
-                        )
+                        logger?.info("there is a dependency from ${project.path} to " + it.dependencyProject.path)
                         result.getOrPut(it.dependencyProject) { mutableSetOf() }
                             .add(project)
                     }

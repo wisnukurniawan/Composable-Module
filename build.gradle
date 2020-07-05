@@ -27,4 +27,4 @@ task clean(type: Delete) {
     delete rootProject.buildDir
 }
 
-apply plugin: 'SkipTestTaskPlugin'
+apply plugin: 'SkipTaskPlugin'

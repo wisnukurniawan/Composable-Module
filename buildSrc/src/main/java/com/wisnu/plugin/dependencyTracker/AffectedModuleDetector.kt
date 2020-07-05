@@ -80,12 +80,7 @@ abstract class AffectedModuleDetector {
         }
 
         private fun getOrThrow(project: Project): AffectedModuleDetector {
-            return getInstance(project) ?: throw GradleException(
-                """
-                    Tried to get affected module detector too early.
-                    You cannot access it until all projects are evaluated.
-                        """.trimIndent()
-            )
+            return getInstance(project) ?: throw GradleException("Tried to get affected module detector too early. You cannot access it until all projects are evaluated.")
         }
 
         /**
@@ -108,11 +103,13 @@ private class AcceptAll(
     private val wrapped: AffectedModuleDetector? = null,
     private val logger: Logger? = null
 ) : AffectedModuleDetector() {
+
     override fun shouldInclude(project: Project): Boolean {
         val wrappedResult = wrapped?.shouldInclude(project)
         logger?.info("[AcceptAll] wrapper returned $wrappedResult but I'll return true")
         return true
     }
+
 }
 
 /**
@@ -126,6 +123,7 @@ class AffectedModuleDetectorImpl constructor(
     private val rootProject: Project,
     private val logger: Logger?
 ) : AffectedModuleDetector() {
+
     private val git by lazy {
         GitClientImpl(rootProject.projectDir, logger)
     }
@@ -155,7 +153,11 @@ class AffectedModuleDetectorImpl constructor(
     }
 
     override fun shouldInclude(project: Project): Boolean {
-        return (project.isRoot || affectedProjects.contains(project)).also {
+        return (project.isRoot || changedProjects.contains(project)).also {
+            println("[TaskInfo] project $project")
+            println("[TaskInfo] affectedProjects $affectedProjects")
+            println("[TaskInfo] changedProjects $changedProjects")
+            println("[TaskInfo] dependentProjects $dependentProjects")
             logger?.info("checking whether I should include ${project.path} and my answer is $it")
         }
     }
@@ -192,4 +194,5 @@ class AffectedModuleDetectorImpl constructor(
             logger?.info("search result for $filePath resulted in ${it?.path}")
         }
     }
+
 }

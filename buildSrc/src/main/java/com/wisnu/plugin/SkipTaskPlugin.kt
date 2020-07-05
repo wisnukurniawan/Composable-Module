@@ -4,7 +4,7 @@ import com.wisnu.plugin.dependencyTracker.AffectedModuleDetector
 import org.gradle.api.Plugin
 import org.gradle.api.Project
 
-class SkipTestTaskPlugin : Plugin<Project> {
+class SkipTaskPlugin : Plugin<Project> {
     override fun apply(project: Project) {
         if (!project.isRoot) throw Exception("This plugin should only be applied to root project")
 

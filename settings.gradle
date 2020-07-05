@@ -1,2 +1,3 @@
+include ':core-utils'
 include ':app', ':launcher:main', ':launcher:compiler', ':launcher:annotations', ':feature-setting', ':feature-transaction', ':feature-order-train', ':feature-order-flight', ':feature-order-hotel', ':feature-order-bus'
 rootProject.name='Order Ticket'
