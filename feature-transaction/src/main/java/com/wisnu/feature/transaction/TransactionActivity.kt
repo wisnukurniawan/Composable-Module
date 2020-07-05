@@ -9,6 +9,6 @@ class TransactionActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_transaction)
 
-        // update comment here 1
+        // update comment here 2
     }
 }
